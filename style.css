@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+img {
+	height: 30px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.task-input i {
+	color: red
+}
+
+body {
+	background-color: dodgerblue;
+	/* overflow: hidden; */
+}
+h1 {
+	color: #fff;
+}
+
+.wrapper {
+	background-color: #fff;
+	max-width: 420px;
+	margin: 40px auto;
+	border-radius: 10px;
+	padding: 20px 0;
+}
+
+/* ПОЛЕ ВВОДА ЗАДАЧ */
+
+.task-input {
+	height: 52px;
+	padding: 0 5%;
+	position: relative;
+}
+.task-input input {
+	height: 100%;
+	width: 100%;
+	padding: 0 20px 0 50px;
+	border-radius: 6px;
+	font-size: 16px;
+	border: solid 1px lightgray;
+}
+.task-input i {
+	position: absolute;
+	top: 50%;
+	transform: translate(10px, -50%);
+	display: flex;
+	align-items: center;
+}
+.task-input input::placeholder {
+	color: lightgray;
+}
+
+/* КНОПКИ УПРАВЛЕНИЯ ЗАДАЧАМИ */
+
+.controls, li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.controls {
+	padding: 18px 5%;
+	border-bottom: 1px solid lightgrey;
+}
+
+.filters span {
+	font-size: 14px;
+	margin: 0 8px;
+	cursor: pointer;
+	transition: 400ms ease;
+}
+.filters span:first-child {
+	margin-left: 0;
+}
+.filters span.active {
+	color: dodgerblue;
+}
+.filters span:hover {
+	color: rgb(31, 126, 221);
+}
+
+.controls .clear-all {
+	outline: none;
+	padding: 7px 6px;
+	border: none;
+	background: dodgerblue;
+	border-radius: 7px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 12px;
+	transition: 400ms ease;
+}
+.controls .clear-all:hover {
+	background: rgb(31, 126, 221);
+}
+
+/* ОКНО С ЗАДАЧАМИ */
+
+.task-desk {
+	margin: 1.25em;
+}
+.task-desk .task-desk__item {
+	list-style: none;
+	font-size: 17px;
+	padding-bottom: 1.25em;
+	padding-top: 1.25em;
+	border-bottom: solid 1px lightgray;
+}
+.task-desk .task-desk__item:first-child {
+	padding-top: 0;
+}
+.task-desk .task-desk__item:last-child {
+	padding-bottom: 0;
+	border-bottom: none;
+}
+.task-desk label {
+	display: flex;
+}
+.task-desk label input {
+	margin-top: .5em;
+	margin-right: .75em;
+}
+
+.task-desk__item .settings {
+	cursor: pointer;
+	position: relative;
+}
+
+.task-desk__item label p.checked {
+	text-decoration: line-through;
+}
+
+/* НАСТРОЙКИ ЗАДАЧ */
+
+.settings .settings__menu {
+	background: #fff;
+	box-shadow: 0 0 .25em grey;
+	padding: .5em;
+	border-radius: .25em;
+	position: absolute;
+	white-space: nowrap;
+	z-index: 2;
+	right: -.75em;
+	bottom: -3em;
+	transform: scale(0);
+	transform-origin: top right;
+	transition: 200ms ease;
+}
+.settings .settings__menu.show {
+	transform: scale(1);
+}
+.settings__menu li {
+	height: 1.25em;
+	font-size: .75em;
+	margin-bottom: 0.5em;
+	transition: 400ms ease;
+}
+.settings__menu li:last-child {
+	margin-bottom: 0;
+}
+.settings__menu li:hover {
+	color:rgb(31, 126, 221);
+}
